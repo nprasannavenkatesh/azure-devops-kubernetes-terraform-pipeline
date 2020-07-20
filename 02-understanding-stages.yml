@@ -55,9 +55,9 @@ stages:
 
   #dependsOn: 
 
-   - #DevDeploy
+    #DevDeploy
 
-   - #QADeploy
+    #QADeploy
 
   jobs:
 

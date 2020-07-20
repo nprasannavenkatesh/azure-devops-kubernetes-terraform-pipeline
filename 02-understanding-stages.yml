@@ -2,13 +2,9 @@ trigger:
 
 - master
 
-
-
 pool:
 
   vmImage: 'ubuntu-latest'
-
-
 
 stages:
 
@@ -22,18 +18,14 @@ stages:
 
     - bash: echo Build FirstJob
 
-
    - job: SecondJob
 
      steps:
 
      - bash: echo Build SecondJob
 
+
  - stage: DevDeploy
-
-#   variables:
-
-#     environment: Dev
 
    dependsOn: Build
 
@@ -45,11 +37,8 @@ stages:
 
      - bash: echo $(environment)DeployJob
 
+
  - stage: QADeploy
-
-#   variables:
-
-#     environment: QA
 
    dependsOn: Build
 
@@ -60,6 +49,7 @@ stages:
      steps:
 
      - bash: echo $(environment)DeployJob
+
 
  - stage: ProdDeploy
 
@@ -76,6 +66,5 @@ stages:
      steps:
 
      - bash: echo ProdDeployJob
-
 
 
